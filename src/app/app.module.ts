@@ -7,12 +7,14 @@ import { AboutComponent } from './about/about.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ServicesComponent } from './services/services.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    ServicesComponent
+    ServicesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
