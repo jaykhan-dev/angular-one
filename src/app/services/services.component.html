@@ -1,0 +1,17 @@
+<div>
+  <div *ngIf="error">
+    <p>Error: {{ error }}</p>
+  </div>
+  <div
+    *ngIf="services"
+    class="xl:w-2/3 mx-auto my-10 grid xl:grid-cols-3 gap-4"
+  >
+    <div *ngFor="let service of services" class="">
+      <div>
+        <img src="{{ service.thumbnail.asset.url }}" alt="" />
+        <h2>{{ service.title }}</h2>
+        <p>{{ service.summary }}</p>
+      </div>
+    </div>
+  </div>
+</div>
