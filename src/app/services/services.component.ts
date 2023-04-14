@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Apollo } from 'apollo-angular';
-import { GET_SERVICES } from '../graphql.operations';
+import { Apollo, gql } from 'apollo-angular';
 
 export interface Services {
   id: string;
@@ -12,6 +11,21 @@ export interface Services {
     };
   };
 }
+
+export const GET_SERVICES = gql`
+  query Services {
+    allServices {
+      _id
+      name
+      summary
+      thumbnail {
+        asset {
+          url
+        }
+      }
+    }
+  }
+`;
 
 @Component({
   selector: 'app-services',

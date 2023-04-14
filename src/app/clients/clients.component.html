@@ -1,1 +1,13 @@
-<p>clients works!</p>
+<div *ngIf="clients" class="grid xl:grid-cols-3 xl:w-2/3 mx-auto gap-4">
+  <div *ngFor="let client of clients" class="">
+    <div class="grid place-items-center border p-2 rounded hover:shadow-xl">
+      <p class="uppercase text-center font-bold">{{ client.name }}</p>
+      <img
+        src="{{ client.thumbnail.asset.url }}"
+        alt=""
+        width="{{ 200 }}"
+        class=""
+      />
+    </div>
+  </div>
+</div>
