@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 
-export interface Client {
+interface Client {
   name: string;
   thumbnail: {
     asset: {
@@ -10,7 +10,7 @@ export interface Client {
   };
 }
 
-export const GET_CLIENTS = gql`
+const GET_CLIENTS = gql`
   query Clients {
     allClients {
       name
