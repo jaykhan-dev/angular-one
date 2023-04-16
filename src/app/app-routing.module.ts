@@ -1,12 +1,12 @@
 import { NgModule, OnInit } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './about/about.component';
-import { ServicesPageComponent } from './services-page/services-page.component';
-import { HomeComponent } from './home/home.component';
-import { TeamComponent } from './team/team.component';
-import { ContactComponent } from './contact/contact.component';
-import { RecuitingComponent } from './recuiting/recuiting.component';
-import { GetStartedComponent } from './get-started/get-started.component';
+import { AboutComponent } from './Pages/about/about.component';
+import { ServicesPageComponent } from './Pages/services-page/services-page.component';
+import { HomeComponent } from './Pages/home/home.component';
+import { TeamComponent } from './Pages/team/team.component';
+import { ContactComponent } from './Pages/contact/contact.component';
+import { RecuitingComponent } from './Pages/recuiting/recuiting.component';
+import { GetStartedComponent } from './Pages/get-started/get-started.component';
 
 const routes: Routes = [
   {

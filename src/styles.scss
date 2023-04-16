@@ -1,3 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/*
+
+font-family: 'Inconsolata', monospace;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Playfair Display', serif;
+
+*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.logo {
+  font-family: "Playfair Display", serif;
+}
+
+h2,
+h3,
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
+button {
+  font-family: "Inconsolata", monospace;
+}

@@ -1,0 +1,20 @@
+<div class="xl:w-2/3 mx-auto mt-10">
+  <div *ngFor="let content of whoWeAre" class="grid xl:grid-cols-2">
+    <div
+      class="xl:flex xl:flex-col place-content-center xl:text-start text-center"
+    >
+      <p class="logo xl:text-8xl text-4xl font-bold my-4">
+        {{ content.title }}
+      </p>
+      <p class="text-xl">{{ content.summary }}</p>
+    </div>
+    <div>
+      <img
+        *ngIf="content.image.asset.url"
+        src="{{ content.image.asset.url }}"
+        alt=""
+        width="{{ 600 }}"
+      />
+    </div>
+  </div>
+</div>

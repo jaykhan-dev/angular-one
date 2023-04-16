@@ -23,6 +23,8 @@
     "@apollo/client": "^3.0.0",
     "apollo-angular": "^4.2.1",
     "graphql": "^16",
+    "lottie-web": "^5.11.0",
+    "ngx-lottie": "^10.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

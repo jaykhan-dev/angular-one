@@ -1,26 +1,28 @@
 <div id="homeBg" *ngIf="homeBlurb" class="grid place-items-center">
   <div
     *ngFor="let content of homeBlurb"
-    class="xl:w-2/3 mx-auto py-20 grid place-items-start text-start"
+    class="xl:w-2/3 mx-auto py-20 grid place-items-center"
   >
     <div
-      class="bg-sky-900/40 backdrop-blur-sm p-4 shadow-xl border-2 border-white/20 rounded"
+      class="bg-sky-900/80 backdrop-blur-sm p-4 shadow-xl grid place-items-center text-center border-2 border-white/20 rounded"
     >
-      <h1 class="text-white xl:text-5xl font-black xl:w-1/2">
+      <p class="text-white logo xl:text-6xl font-black xl:w-2/3">
         {{ content.title }}
-      </h1>
-      <p class="text-3xl mt-10 text-sky-100">{{ content.summary }}</p>
-      <div class="flex items-center space-x-4 mt-8 text-white">
+      </p>
+      <p class="text-2xl mt-10 text-sky-100">{{ content.summary }}</p>
+      <!-- <div class="flex items-center space-x-4 mt-8 text-white">
         <button mat-raised-button color="primary" class="uppercase">
           <a href="" class="text-white"> apply </a>
         </button>
         <button mat-raised-button color="primary" class="uppercase">
           <a href="" class="text-white"> get in touch </a>
         </button>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
+
+<app-who-we-are></app-who-we-are>
 
 <app-clients></app-clients>
 <app-services></app-services>

@@ -3,22 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
+import { AboutComponent } from './Pages/about/about.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ServicesComponent } from './services/services.component';
-import { HomeComponent } from './home/home.component';
-import { ServicesPageComponent } from './services-page/services-page.component';
-import { ClientsComponent } from './clients/clients.component';
-import { CandidateProfilesComponent } from './candidate-profiles/candidate-profiles.component';
-import { TeamComponent } from './team/team.component';
-import { ContactComponent } from './contact/contact.component';
-import { RecuitingComponent } from './recuiting/recuiting.component';
-import { GetStartedComponent } from './get-started/get-started.component';
+import { ServicesComponent } from './Components/services/services.component';
+import { HomeComponent } from './Pages/home/home.component';
+import { ServicesPageComponent } from './Pages/services-page/services-page.component';
+import { ClientsComponent } from './Components/clients/clients.component';
+import { CandidateProfilesComponent } from './Components/candidate-profiles/candidate-profiles.component';
+import { TeamComponent } from './Pages/team/team.component';
+import { ContactComponent } from './Pages/contact/contact.component';
+import { RecuitingComponent } from './Pages/recuiting/recuiting.component';
+import { GetStartedComponent } from './Pages/get-started/get-started.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
+import { FooterComponent } from './Components/footer/footer.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+import { ConnectComponent } from './Components/connect/connect.component';
+import { WhatWeDoComponent } from './Components/what-we-do/what-we-do.component';
+import { WhoWeAreComponent } from './Components/who-we-are/who-we-are.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +38,11 @@ import { MatButtonModule } from '@angular/material/button';
     ContactComponent,
     RecuitingComponent,
     GetStartedComponent,
+    FooterComponent,
+    NavbarComponent,
+    ConnectComponent,
+    WhatWeDoComponent,
+    WhoWeAreComponent,
   ],
   imports: [
     BrowserModule,
