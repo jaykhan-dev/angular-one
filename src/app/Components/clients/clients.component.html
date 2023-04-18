@@ -1,4 +1,27 @@
-<div *ngIf="clients" class="grid xl:grid-cols-3 xl:w-2/3 mx-auto gap-4 p-2">
+<div
+  *ngFor="let blurb of clientsBlurb"
+  class="grid xl:grid-cols-2 place-items-center gap-4 xl:w-2/3 mx-auto"
+>
+  <div>
+    <img
+      *ngIf="blurb.image.asset.url"
+      src="{{ blurb.image.asset.url }}"
+      alt=""
+      width="{{ 600 }}"
+    />
+  </div>
+  <div class="">
+    <p class="border-l-4 border-black px-4 uppercase font-bold">
+      {{ blurb.title }}
+    </p>
+    <p class="text-2xl">{{ blurb.summary }}</p>
+  </div>
+</div>
+
+<div
+  *ngIf="clients"
+  class="grid xl:grid-cols-3 xl:w-2/3 mx-auto gap-4 p-2 mb-20"
+>
   <div *ngFor="let client of clients" class="">
     <div class="grid place-items-center border p-2 rounded hover:shadow-xl">
       <p class="uppercase text-center font-bold">{{ client.name }}</p>

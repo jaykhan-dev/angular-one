@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 
-export interface Services {
+interface Services {
   id: string;
   name: string;
   summary: string;
@@ -12,7 +12,7 @@ export interface Services {
   };
 }
 
-export const GET_SERVICES = gql`
+const GET_SERVICES = gql`
   query Services {
     allServices {
       _id

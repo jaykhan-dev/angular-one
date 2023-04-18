@@ -1,20 +1,28 @@
-<div>
-  <div *ngIf="error">
-    <p>Error: {{ error }}</p>
-  </div>
-  <div
-    *ngIf="services"
-    class="xl:w-2/3 mx-auto my-10 grid xl:grid-cols-2 md:grid-cols-2 gap-4 p-2"
+<mat-tab-group class="xl:w-2/3 mx-auto py-20">
+  <mat-tab
+    *ngFor="let service of services"
+    label="{{ service.name }}"
+    class="py-10"
   >
-    <div *ngFor="let service of services" class="">
-      <div>
-        <img src="{{ service.thumbnail.asset.url }}" alt="" width="{{ 600 }}" />
-        <p class="logo text-2xl font-bold mt-4">{{ service.name }}</p>
-        <p class="text-sm mt-4">{{ service.summary }}</p>
-        <button mat-raised-button color="primary" class="text-sm">
-          <a href=""> learn more </a>
-        </button>
+    <div class="grid xl:grid-cols-2 gap-4 mt-10 py-10">
+      <div class="grid place-items-center">
+        <img
+          src="{{ service.thumbnail.asset.url }}"
+          alt=""
+          width="{{ 500 }}"
+          class="shadow-xl"
+        />
+      </div>
+      <div class="grid place-items-center">
+        <div>
+          <p class="uppercase font-bold">overview</p>
+          <p class="text-2xl my-4 text-sky-500">{{ service.name }}</p>
+          <p class="leading-8">{{ service.summary }}</p>
+          <button mat-raised-button color="accent">
+            <a href=""> Learn More </a>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </mat-tab>
+</mat-tab-group>

@@ -1,1 +1,30 @@
-<p>what-we-do works!</p>
+<div class="xl:w-2/3 mx-auto">
+  <div *ngFor="let content of whatWeDo">
+    <div class="grid xl:grid-cols-2">
+      <div>
+        <img
+          *ngIf="content.image.asset.url"
+          src="{{ content.image.asset.url }}"
+          alt=""
+          width="{{ 600 }}"
+        />
+      </div>
+      <div
+        class="xl:flex xl:flex-col place-content-center xl:text-start text-center"
+      >
+        <p class="border-l-4 border-black px-4 uppercase font-bold my-4">
+          {{ content.title }}
+        </p>
+        <p class="font-bold text-4xl my-4 text-blue-500">
+          {{ content.subHeading }}
+        </p>
+        <p class="text-xl">{{ content.summary }}</p>
+        <div>
+          <button mat-raised-button color="primary">
+            <a href="{{ content.button }}"> Learn More </a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -19,11 +19,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
+//import {MatTabGroupModule} from '@angular/material/tab-group';
+import { MatTabsModule } from '@angular/material/tabs';
 import { FooterComponent } from './Components/footer/footer.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { ConnectComponent } from './Components/connect/connect.component';
 import { WhatWeDoComponent } from './Components/what-we-do/what-we-do.component';
 import { WhoWeAreComponent } from './Components/who-we-are/who-we-are.component';
+import { ServicesDetailPageComponent } from './services-detail-page/services-detail-page.component';
+import { ProfilesBlurbComponent } from './Components/profiles-blurb/profiles-blurb.component';
+import { GridComponent } from './Components/grid/grid.component';
+import { ServicesBlurbComponent } from './Components/services-blurb/services-blurb.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +49,10 @@ import { WhoWeAreComponent } from './Components/who-we-are/who-we-are.component'
     ConnectComponent,
     WhatWeDoComponent,
     WhoWeAreComponent,
+    ServicesDetailPageComponent,
+    ProfilesBlurbComponent,
+    GridComponent,
+    ServicesBlurbComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +62,7 @@ import { WhoWeAreComponent } from './Components/who-we-are/who-we-are.component'
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatButtonModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

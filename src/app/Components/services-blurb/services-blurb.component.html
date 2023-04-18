@@ -1,0 +1,18 @@
+<div
+  *ngFor="let content of servicesBlurb"
+  class="xl:w-2/3 mx-auto grid xl:grid-cols-2 gap-4"
+>
+  <div class="grid place-items-center">
+    <div>
+      <p class="uppercase text-sm font-bold my-4 border-l-4 px-4 border-black">
+        {{ content.title }}
+      </p>
+      <p class="text-2xl">{{ content.summary }}</p>
+    </div>
+  </div>
+  <div class="grid place-items-center">
+    <img src="{{ content.image.asset.url }}" alt="" width="{{ 600 }}" />
+  </div>
+</div>
+
+<app-services></app-services>
