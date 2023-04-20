@@ -19,10 +19,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
-//import {MatTabGroupModule} from '@angular/material/tab-group';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { FooterComponent } from './Components/footer/footer.component';
-import { NavbarComponent } from './Components/navbar/navbar.component';
+
 import { ConnectComponent } from './Components/connect/connect.component';
 import { WhatWeDoComponent } from './Components/what-we-do/what-we-do.component';
 import { WhoWeAreComponent } from './Components/who-we-are/who-we-are.component';
@@ -30,6 +32,12 @@ import { ServicesDetailPageComponent } from './services-detail-page/services-det
 import { ProfilesBlurbComponent } from './Components/profiles-blurb/profiles-blurb.component';
 import { GridComponent } from './Components/grid/grid.component';
 import { ServicesBlurbComponent } from './Components/services-blurb/services-blurb.component';
+import { ServicesDetailedComponent } from './Pages/services-page/services-detailed/services-detailed.component';
+import { LoadingComponent } from './Components/loading/loading.component';
+import { ErrorComponent } from './Components/error/error.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -45,7 +53,6 @@ import { ServicesBlurbComponent } from './Components/services-blurb/services-blu
     RecuitingComponent,
     GetStartedComponent,
     FooterComponent,
-    NavbarComponent,
     ConnectComponent,
     WhatWeDoComponent,
     WhoWeAreComponent,
@@ -53,6 +60,10 @@ import { ServicesBlurbComponent } from './Components/services-blurb/services-blu
     ProfilesBlurbComponent,
     GridComponent,
     ServicesBlurbComponent,
+    ServicesDetailedComponent,
+    LoadingComponent,
+    ErrorComponent,
+    MainNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +74,11 @@ import { ServicesBlurbComponent } from './Components/services-blurb/services-blu
     MatSlideToggleModule,
     MatButtonModule,
     MatTabsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    LayoutModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

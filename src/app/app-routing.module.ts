@@ -1,8 +1,8 @@
-import { NgModule, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './Pages/about/about.component';
 import { ServicesPageComponent } from './Pages/services-page/services-page.component';
-import { ServicesDetailPageComponent } from './services-detail-page/services-detail-page.component';
+import { ServicesDetailedComponent } from './Pages/services-page/services-detailed/services-detailed.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { TeamComponent } from './Pages/team/team.component';
 import { ContactComponent } from './Pages/contact/contact.component';
@@ -21,10 +21,11 @@ const routes: Routes = [
   {
     path: 'services',
     component: ServicesPageComponent,
+    children: [],
   },
   {
     path: 'services/:slug',
-    component: ServicesDetailPageComponent,
+    component: ServicesDetailedComponent,
   },
   {
     path: 'team',
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'get-started',
     component: GetStartedComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '',
   },
 ];
 

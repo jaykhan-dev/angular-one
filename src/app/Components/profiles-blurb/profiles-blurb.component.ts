@@ -1,23 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { Blurb } from 'src/app/Models/blurb.model';
-
-// a7abd7e0-fcc8-4ae8-9e5f-510866f234ac
-
-const GET_PROFILES_BLURB = gql`
-  query BLURBS {
-    allBlurbs(where: { _id: { eq: "a7abd7e0-fcc8-4ae8-9e5f-510866f234ac" } }) {
-      title
-      _id
-      summary
-      image {
-        asset {
-          url
-        }
-      }
-    }
-  }
-`;
+import { ProfilesService } from 'src/app/Service/profiles.service';
+import { ProfilesBlurb } from 'src/app/Models/profiles.model';
 
 @Component({
   selector: 'app-profiles-blurb',
@@ -25,19 +10,20 @@ const GET_PROFILES_BLURB = gql`
   styleUrls: ['./profiles-blurb.component.scss'],
 })
 export class ProfilesBlurbComponent implements OnInit {
-  profilesBlurb: Blurb[] = [];
-  error: any;
+  profilesBlurb: ProfilesBlurb[] = [];
+  error: unknown;
 
-  constructor(private apollo: Apollo) {}
+  constructor(private profilesService: ProfilesService) {}
 
   ngOnInit(): void {
-    this.apollo
-      .watchQuery({
-        query: GET_PROFILES_BLURB,
-      })
-      .valueChanges.subscribe(({ data, error }: any) => {
-        this.profilesBlurb = data.allBlurbs;
-        this.error = error;
-      });
+    this.getProfilesBlurb();
+  }
+
+  getProfilesBlurb() {
+    this.profilesService.getProfilesBlurb().subscribe((data: any) => {
+      this.profilesBlurb = data.data.allBlurbs;
+      this.error = data.errors;
+      console.log(data.data.allBlurbs);
+    });
   }
 }

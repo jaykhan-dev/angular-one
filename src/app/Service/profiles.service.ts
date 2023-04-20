@@ -1,22 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Apollo, gql, QueryRef } from 'apollo-angular';
 import { Observable } from 'rxjs';
-
-export interface CandidateProfile {
-  data: {
-    allTechStack: {
-      title: string;
-      slug: {
-        current: string;
-      };
-      summary: string;
-    };
-  };
-}
+import { CandidateProfile } from '../Models/profiles.model';
+import { ProfilesBlurb } from '../Models/profiles.model';
 
 const GET_CANDIDATE_PROFILES = gql`
   query CandidateProfiles {
     allTechStack {
+      _id
       title
       slug {
         current
@@ -26,18 +17,17 @@ const GET_CANDIDATE_PROFILES = gql`
   }
 `;
 
-export interface CandidateProfileBlurb {
-  _id: string;
-  title: string;
-  summary: string;
-}
-
 const GET_CANDIDATE_PROFILE_BLURB = gql`
   query CandidateProfileBlurb {
-    allBlurbs(where: { _id: { eq: "8d055060-b180-4100-885e-dcb951360e2c" } }) {
+    allBlurbs(where: { _id: { eq: "a7abd7e0-fcc8-4ae8-9e5f-510866f234ac" } }) {
       _id
       title
       summary
+      image {
+        asset {
+          url
+        }
+      }
     }
   }
 `;
@@ -48,9 +38,15 @@ const GET_CANDIDATE_PROFILE_BLURB = gql`
 export class ProfilesService {
   constructor(private apollo: Apollo) {}
 
-  getProfiles(): Observable<any> {
-    return this.apollo.watchQuery<any>({
+  getProfiles(): Observable<unknown> {
+    return this.apollo.watchQuery<unknown>({
       query: GET_CANDIDATE_PROFILES,
+    }).valueChanges;
+  }
+
+  getProfilesBlurb(): Observable<unknown> {
+    return this.apollo.watchQuery<unknown>({
+      query: GET_CANDIDATE_PROFILE_BLURB,
     }).valueChanges;
   }
 }

@@ -1,25 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Apollo, gql } from 'apollo-angular';
-
-interface Profiles {
-  title: string;
-  summary: string;
-  slug: {
-    current: string;
-  };
-}
-
-const GET_CANDIDATE_PROFILES = gql`
-  query CandidateProfiles {
-    allTechStack {
-      title
-      slug {
-        current
-      }
-      summary
-    }
-  }
-`;
+import { ProfilesService } from 'src/app/Service/profiles.service';
+import { CandidateProfile } from 'src/app/Models/profiles.model';
 
 @Component({
   selector: 'app-candidate-profiles',
@@ -27,19 +8,19 @@ const GET_CANDIDATE_PROFILES = gql`
   styleUrls: ['./candidate-profiles.component.scss'],
 })
 export class CandidateProfilesComponent implements OnInit {
-  profiles: Profiles[] = [];
+  profiles: CandidateProfile[] = [];
   error: any;
 
-  constructor(private apollo: Apollo) {}
+  constructor(private profilesService: ProfilesService) {}
 
-  ngOnInit() {
-    this.apollo
-      .watchQuery({
-        query: GET_CANDIDATE_PROFILES,
-      })
-      .valueChanges.subscribe(({ data, error }: any) => {
-        this.profiles = data.allTechStack;
-        this.error = error;
-      });
+  ngOnInit(): void {
+    this.getProfiles();
+  }
+
+  getProfiles() {
+    this.profilesService.getProfiles().subscribe((data: any) => {
+      this.profiles = data.data.allTechStack;
+      this.error = data.errors;
+    });
   }
 }

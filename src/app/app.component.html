@@ -1,35 +1,5 @@
-<nav class="fixed top-0 w-full bg-zinc-900/95 backdrop-blur-md z-50">
-  <div class="flex justify-between p-2 xl:w-2/3 mx-auto">
-    <div class="flex items-center space-x-4">
-      <img [src]="logo" alt="Total Systems Logo" width="50" />
-      <a routerLink="/" class="logo text-xl font-bold text-white">
-        Total Systems
-      </a>
-    </div>
-    <div class="flex items-center space-x-4 uppercase">
-      <div class="hidden">
-        <button>
-          <a routerLink="/about">About</a>
-        </button>
-        <button>
-          <a routerLink="/services">Services</a>
-        </button>
-        <button>
-          <a href="/recruiting">Recruitment</a>
-        </button>
-        <button>
-          <a href="">Team</a>
-        </button>
-        <button>
-          <a href="">Contact</a>
-        </button>
-      </div>
-      <button class="px-4 p-2 rounded shadow bg-sky-500 text-white uppercase">
-        <a routerLink="get-started">Get Started</a>
-      </button>
-    </div>
-  </div>
-</nav>
+<app-main-nav></app-main-nav>
+<!-- <app-navbar></app-navbar> -->
 
 <router-outlet></router-outlet>
 
