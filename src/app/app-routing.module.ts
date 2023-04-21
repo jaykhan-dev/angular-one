@@ -6,8 +6,9 @@ import { ServicesDetailedComponent } from './Pages/services-page/services-detail
 import { HomeComponent } from './Pages/home/home.component';
 import { TeamComponent } from './Pages/team/team.component';
 import { ContactComponent } from './Pages/contact/contact.component';
-import { RecuitingComponent } from './Pages/recuiting/recuiting.component';
+import { RecuitingComponent } from './Pages/recruiting/recruiting.component';
 import { GetStartedComponent } from './Pages/get-started/get-started.component';
+import { ProfilesSlugComponent } from './Pages/profiles-slug/profiles-slug.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'recruiting',
     component: RecuitingComponent,
+  },
+  {
+    path: 'recruiting/:id',
+    component: ProfilesSlugComponent,
   },
   {
     path: 'get-started',

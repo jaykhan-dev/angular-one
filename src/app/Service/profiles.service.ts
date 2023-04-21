@@ -39,13 +39,13 @@ export class ProfilesService {
   constructor(private apollo: Apollo) {}
 
   getProfiles(): Observable<unknown> {
-    return this.apollo.watchQuery<unknown>({
+    return this.apollo.watchQuery<CandidateProfile>({
       query: GET_CANDIDATE_PROFILES,
     }).valueChanges;
   }
 
   getProfilesBlurb(): Observable<unknown> {
-    return this.apollo.watchQuery<unknown>({
+    return this.apollo.watchQuery<ProfilesBlurb>({
       query: GET_CANDIDATE_PROFILE_BLURB,
     }).valueChanges;
   }

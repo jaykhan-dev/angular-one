@@ -23,7 +23,6 @@ export class ProfilesBlurbComponent implements OnInit {
     this.profilesService.getProfilesBlurb().subscribe((data: any) => {
       this.profilesBlurb = data.data.allBlurbs;
       this.error = data.errors;
-      console.log(data.data.allBlurbs);
     });
   }
 }

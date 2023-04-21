@@ -4,6 +4,7 @@ export interface CandidateProfile {
   slug: {
     current: string;
   };
+  summary: string;
 }
 
 export interface ProfilesBlurb {

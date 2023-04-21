@@ -9,7 +9,8 @@ import { CandidateProfile } from 'src/app/Models/profiles.model';
 })
 export class CandidateProfilesComponent implements OnInit {
   profiles: CandidateProfile[] = [];
-  error: any;
+  error: unknown;
+  loading: boolean | undefined;
 
   constructor(private profilesService: ProfilesService) {}
 

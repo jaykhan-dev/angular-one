@@ -1,7 +1,12 @@
+<div *ngIf="loading">
+  <p>loading...</p>
+</div>
 <div class="grid xl:grid-cols-4 gap-4 my-10">
-  <div *ngFor="let profile of profiles" class="">
+  <div *ngFor="let profile of profiles">
     <button mat-raised-button class="m-1 w-full" color="primary">
-      <a class="text-white">{{ profile.title }}</a>
+      <a routerLink="/recruiting/{{ profile._id }}" class="text-white">{{
+        profile.title
+      }}</a>
     </button>
   </div>
 </div>

@@ -13,7 +13,7 @@ import { ClientsComponent } from './Components/clients/clients.component';
 import { CandidateProfilesComponent } from './Components/candidate-profiles/candidate-profiles.component';
 import { TeamComponent } from './Pages/team/team.component';
 import { ContactComponent } from './Pages/contact/contact.component';
-import { RecuitingComponent } from './Pages/recuiting/recuiting.component';
+import { RecuitingComponent } from './Pages/recruiting/recruiting.component';
 import { GetStartedComponent } from './Pages/get-started/get-started.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -38,6 +38,7 @@ import { ErrorComponent } from './Components/error/error.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatListModule } from '@angular/material/list';
+import { ProfilesSlugComponent } from './Pages/profiles-slug/profiles-slug.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { MatListModule } from '@angular/material/list';
     LoadingComponent,
     ErrorComponent,
     MainNavComponent,
+    ProfilesSlugComponent,
   ],
   imports: [
     BrowserModule,
