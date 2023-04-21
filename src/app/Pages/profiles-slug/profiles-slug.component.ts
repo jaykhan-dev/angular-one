@@ -8,7 +8,7 @@ import { ProfilesService } from 'src/app/Service/profiles.service';
   styleUrls: ['./profiles-slug.component.css'],
 })
 export class ProfilesSlugComponent implements OnInit {
-  public profileId = '';
+  public slug = '';
   public profile: any = {};
 
   constructor(
@@ -18,17 +18,19 @@ export class ProfilesSlugComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.profileId = params.get('id') || '';
+      this.slug = params.get('slug') || '';
     });
 
     this.service.getProfiles().subscribe((data: any) => {
       const profiles = data.data.allTechStack;
       const profileDetail = profiles.find(
-        (profile: { _id: string }) => profile._id === this.profileId
+        (profile: { slug: { current: string } }) =>
+          profile.slug.current === this.slug
       );
       if (profileDetail) {
         this.profile = profileDetail;
       }
+      console.log(profileDetail);
     });
   }
 }

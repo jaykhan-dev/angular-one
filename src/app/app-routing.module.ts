@@ -41,7 +41,7 @@ const routes: Routes = [
     component: RecuitingComponent,
   },
   {
-    path: 'recruiting/:id',
+    path: 'recruiting/:slug',
     component: ProfilesSlugComponent,
   },
   {
